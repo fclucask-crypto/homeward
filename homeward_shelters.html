@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Homeward for shelters. Built for the people who do the work of adoption. Modern listings, pre-screened applicants, and AI marketing tools in one place.">
+  <meta property="og:title" content="Homeward for shelters">
+  <meta property="og:description" content="See what your shelter could look like on Homeward.">
+  <title>Homeward for shelters</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='6' cy='10' r='2' fill='%23C24914'/%3E%3Ccircle cx='12' cy='6' r='2.2' fill='%23C24914'/%3E%3Ccircle cx='18' cy='10' r='2' fill='%23C24914'/%3E%3Cellipse cx='12' cy='16' rx='5' ry='4' fill='%23C24914'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAF7F0;
+      --bg-card: #FFFFFF;
+      --bg-soft: #F1EBDD;
+      --bg-coral: #FAEDE3;
+      --ink: #1F1A15;
+      --ink-soft: #6B6259;
+      --ink-muted: #998D80;
+      --accent: #C24914;
+      --accent-dark: #8C310A;
+      --accent-deep: #4A1B0C;
+      --border: rgba(31,26,21,0.10);
+      --border-strong: rgba(31,26,21,0.20);
+      --success: #2F6E44;
+      --success-bg: #E6F0E9;
+      --warning: #B47A1A;
+      --warning-bg: #FAF1DD;
+      --info: #1F4F8B;
+      --info-bg: #E5EDF7;
+      --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --radius: 8px;
+      --radius-lg: 14px;
+      --radius-xl: 22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -0.015em; }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+    /* ============ HEADER ============ */
+    .nav {
+      background: rgba(250,247,240,0.92);
+      backdrop-filter: saturate(180%) blur(8px);
+      -webkit-backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-name { font-family: var(--font-display); font-size: 22px; font-weight: 600; line-height: 1; letter-spacing: -0.01em; }
+    .logo-tag { font-size: 11px; color: var(--ink-muted); margin-top: 3px; font-style: italic; font-family: var(--font-display); }
+    .nav-tag { font-size: 13px; color: var(--ink-soft); font-style: italic; font-family: var(--font-display); }
+
+    /* ============ HERO ============ */
+    .hero {
+      padding: 80px 0 60px;
+      background: var(--bg);
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--accent);
+      font-size: 15px;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 5.5vw, 64px);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+    .hero h1 em { font-style: italic; font-weight: 500; }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--ink-soft);
+      max-width: 620px;
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+    .hero-marker {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--accent-deep);
+      font-size: 16px;
+      padding: 12px 18px;
+      background: var(--bg-coral);
+      border-radius: var(--radius);
+      display: inline-block;
+    }
+
+    /* ============ SECTIONS ============ */
+    section { padding: 70px 0; }
+    .section-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--accent);
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 40px);
+      margin-bottom: 18px;
+      line-height: 1.1;
+      max-width: 720px;
+    }
+    .section-title em { font-style: italic; }
+    .section-body {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 36px;
+    }
+
+    /* ============ DIVIDERS ============ */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ============ MOCKUP: LISTINGS GRID ============ */
+    .mockup-frame {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(31,26,21,0.05);
+    }
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-header-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+    }
+    .mockup-header-meta {
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+    .pet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pet-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    .pet-img-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--accent-deep);
+    }
+    .pet-img-placeholder.coral { background: var(--bg-coral); }
+    .pet-img-placeholder.wheat { background: var(--bg-soft); }
+    .pet-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-soft);
+    }
+    .marketing-pet img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+    }
+    .pet-days {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(31,26,21,0.78);
+      color: white;
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .pet-days.urgent { background: var(--accent); }
+    .pet-body {
+      padding: 12px 14px;
+    }
+    .pet-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .pet-meta {
+      font-size: 11px;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+    .fit-score {
+      font-size: 10px;
+      padding: 2px 7px;
+      background: var(--bg-coral);
+      color: var(--accent-deep);
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    /* ============ MOCKUP: APPLICATION INBOX ============ */
+    .app-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 14px;
+    }
+    .app-row:last-child { border-bottom: none; }
+    .app-info {
+      flex: 1;
+    }
+    .app-applicant {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .app-details {
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+    .app-score {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+    .app-fit {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--accent-deep);
+    }
+    .app-status {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    .app-status.new { background: var(--info-bg); color: var(--info); }
+    .app-status.review { background: var(--warning-bg); color: var(--warning); }
+    .app-status.approved { background: var(--success-bg); color: var(--success); }
+
+    /* ============ MOCKUP: MARKETING ============ */
+    .marketing-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .marketing-pet {
+      width: 280px;
+      aspect-ratio: 1;
+      background: var(--bg-coral);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--accent-deep);
+      overflow: hidden;
+    }
+    .marketing-caption {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .marketing-tags {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+    .marketing-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .marketing-btn {
+      font-family: var(--font-body);
+      font-size: 12px;
+      padding: 7px 12px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--ink);
+      cursor: default;
+    }
+
+    /* ============ CTA SECTION ============ */
+    .cta {
+      background: var(--accent-deep);
+      color: var(--bg-coral);
+      padding: 90px 0;
+    }
+    .cta .section-num { color: #F5C4B3; }
+    .cta-title {
+      font-size: clamp(32px, 4vw, 44px);
+      color: white;
+      margin-bottom: 22px;
+      line-height: 1.1;
+      max-width: 700px;
+    }
+    .cta-title em { font-style: italic; }
+    .cta-body {
+      font-size: 17px;
+      color: #F5C4B3;
+      line-height: 1.6;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 16px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta-button:hover { background: #D85A30; }
+    .cta-note {
+      font-size: 13px;
+      color: #F0997B;
+      font-style: italic;
+      font-family: var(--font-display);
+      margin-top: 22px;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--ink);
+      color: rgba(250,247,240,0.65);
+      padding: 40px 0;
+      font-size: 13px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      color: white;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    /* ============ SOCIAL PROOF ============ */
+    .social-proof-section {
+      padding: 50px 0 30px;
+    }
+    .social-proof {
+      background: var(--bg-coral);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px;
+      border-left: 3px solid var(--accent);
+    }
+    .social-proof-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-deep);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .social-proof-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .social-proof-attribution {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin-bottom: 26px;
+    }
+    .social-proof-stat {
+      font-size: 16px;
+      color: var(--ink);
+      padding-top: 22px;
+      border-top: 1px solid rgba(194,73,20,0.22);
+      line-height: 1.55;
+    }
+    .social-proof-stat strong {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent-deep);
+    }
+
+    /* ============ TRANSITIONS ============ */
+    .transition {
+      text-align: center;
+      padding: 36px 32px;
+    }
+    .transition p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* ============ CTA BENEFITS ============ */
+    .cta-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin: 30px 0 0;
+      padding-top: 30px;
+      border-top: 1px solid rgba(245,196,179,0.22);
+    }
+    .cta-benefit {
+      font-size: 14px;
+      color: #F5C4B3;
+      line-height: 1.5;
+    }
+    .cta-benefit-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 28px;
+      color: white;
+      display: block;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .cta-benefit strong {
+      color: white;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 720px) {
+      .hero { padding: 50px 0 40px; }
+      .pet-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .pet-grid .pet-card:nth-child(n+5) { display: none; }
+      .marketing-grid { grid-template-columns: 1fr; gap: 16px; }
+      .marketing-pet { width: 100%; }
+      .container { padding: 0 22px; }
+      .nav-inner { padding: 14px 22px; }
+      .nav-tag { display: none; }
+      section { padding: 50px 0; }
+      .social-proof { padding: 30px 24px; }
+      .social-proof-section { padding: 30px 0 20px; }
+      .transition { padding: 24px 22px; }
+      .cta-benefits { grid-template-columns: 1fr; gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="6" cy="10" r="2" fill="#C24914"/>
+        <circle cx="12" cy="6" r="2.2" fill="#C24914"/>
+        <circle cx="18" cy="10" r="2" fill="#C24914"/>
+        <ellipse cx="12" cy="16" rx="5" ry="4" fill="#C24914"/>
+      </svg>
+      <div>
+        <div class="logo-name">Homeward</div>
+        <div class="logo-tag">Where pets find people</div>
+      </div>
+    </a>
+    <span class="nav-tag">For shelters</span>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Most days, the animals are the easy part.</p>
+    <h1>Built for the people who do the <em>work of adoption.</em></h1>
+    <p class="hero-sub">Modern listings, pre-screened applicants, and AI marketing tools, all designed to get more of your animals into homes faster. Free during pilot.</p>
+    <p class="hero-marker">This is what your shelter could look like on Homeward.</p>
+  </div>
+</section>
+
+<div class="divider"><div class="container"></div></div>
+
+<!-- ===================== SOCIAL PROOF ===================== -->
+<section class="social-proof-section">
+  <div class="container">
+    <div class="social-proof">
+      <p class="social-proof-label">What adopters are asking for</p>
+      <p class="social-proof-quote">"Reduce redundancy."</p>
+      <p class="social-proof-attribution">A real adopter, when asked what one thing they would fix about pet adoption today. Homeward adopter survey, April 2026.</p>
+      <p class="social-proof-stat"><strong>88% of adopters surveyed</strong> chose "fill out one application and reuse it for multiple pets" over filling out a new application for each pet. The platform is not our idea. It is the thing adopters have been asking for.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="container"></div></div>
+
+<!-- ===================== SECTION 1: LISTINGS ===================== -->
+<section>
+  <div class="container">
+    <span class="section-num">01 · Listings</span>
+    <h2 class="section-title">Modern listings designed for the way people actually <em>search.</em></h2>
+    <p class="section-body">Your pets, presented the way they deserve. Clean photo-forward listings, with the personality details adopters actually scan for. Every animal gets equal visibility, including the seniors, the bully breeds, and the ones who've been waiting longest.</p>
+
+    <div class="mockup-frame">
+      <div class="mockup-header">
+        <span class="mockup-header-title">Your shelter on Homeward</span>
+        <span class="mockup-header-meta">15 pets · Updated today</span>
+      </div>
+      <div class="pet-grid">
+        <div class="pet-card">
+          <span class="pet-days">18 days</span>
+          <img id="img-marlow" src="" alt="Marlow" style="background:var(--bg-coral);">
+          <div class="pet-body">
+            <p class="pet-name">Marlow</p>
+            <p class="pet-meta">Lab mix · 3 yrs · Large</p>
+            <span class="fit-score">Good with kids</span>
+          </div>
+        </div>
+        <div class="pet-card">
+          <span class="pet-days">9 days</span>
+          <img id="img-pickles" src="" alt="Pickles" style="background:var(--bg-soft);">
+          <div class="pet-body">
+            <p class="pet-name">Pickles</p>
+            <p class="pet-meta">Pug · 2 yrs · Small</p>
+            <span class="fit-score">Apartment-friendly</span>
+          </div>
+        </div>
+        <div class="pet-card">
+          <span class="pet-days urgent">67 days</span>
+          <img id="img-hank" src="" alt="Hank" style="background:var(--bg-coral);">
+          <div class="pet-body">
+            <p class="pet-name">Hank</p>
+            <p class="pet-meta">Pit bull mix · 4 yrs · Large</p>
+            <span class="fit-score">Loves walks</span>
+          </div>
+        </div>
+        <div class="pet-card">
+          <span class="pet-days">5 days</span>
+          <img id="img-biscuit" src="" alt="Biscuit" style="background:var(--bg-soft);">
+          <div class="pet-body">
+            <p class="pet-name">Biscuit</p>
+            <p class="pet-meta">Golden retriever · 1 yr · Medium</p>
+            <span class="fit-score">Playful</span>
+          </div>
+        </div>
+        <div class="pet-card">
+          <span class="pet-days urgent">42 days</span>
+          <img id="img-olive" src="" alt="Olive" style="background:var(--bg-coral);">
+          <div class="pet-body">
+            <p class="pet-name">Olive</p>
+            <p class="pet-meta">Senior collie · 9 yrs · Medium</p>
+            <span class="fit-score">Calm</span>
+          </div>
+        </div>
+        <div class="pet-card">
+          <span class="pet-days">14 days</span>
+          <img id="img-mochi" src="" alt="Mochi" style="background:var(--bg-soft);">
+          <div class="pet-body">
+            <p class="pet-name">Mochi</p>
+            <p class="pet-meta">Shiba Inu · 3 yrs · Medium</p>
+            <span class="fit-score">Trained</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="transition">
+  <p>Listings are only the front door. The harder problem starts when adopters apply.</p>
+</div>
+
+<!-- ===================== SECTION 2: APPLICATIONS ===================== -->
+<section>
+  <div class="container">
+    <span class="section-num">02 · Applications</span>
+    <h2 class="section-title">Every applicant pre-screened, in <em>one inbox.</em></h2>
+    <p class="section-body">Adopter inquiries arrive through five different channels today. Emails, voicemails, Facebook messages, application forms, and walk-ins. Homeward gives you one inbox where every applicant arrives in the same format, with a complete profile attached, pre-screened against your shelter's criteria. Triage that used to take a weekend now takes minutes.</p>
+
+    <div class="mockup-frame">
+      <div class="mockup-header">
+        <span class="mockup-header-title">Application queue</span>
+        <span class="mockup-header-meta">4 pending · sorted by fit</span>
+      </div>
+
+      <div class="app-row">
+        <div class="app-info">
+          <p class="app-applicant">Priya Patel → Olive</p>
+          <p class="app-details">Quiet home · Senior dog experience · House with yard · No kids · References verified</p>
+        </div>
+        <div class="app-score">
+          <span class="app-fit">94% fit</span>
+          <span class="app-status approved">Ready to approve</span>
+        </div>
+      </div>
+
+      <div class="app-row">
+        <div class="app-info">
+          <p class="app-applicant">Marcus Webb → Marlow</p>
+          <p class="app-details">House with yard · 2 kids · Has prior dog · Looking for active companion · References verified</p>
+        </div>
+        <div class="app-score">
+          <span class="app-fit">87% fit</span>
+          <span class="app-status review">Reviewing</span>
+        </div>
+      </div>
+
+      <div class="app-row">
+        <div class="app-info">
+          <p class="app-applicant">Alex Kim → Hank</p>
+          <p class="app-details">Experienced with bully breeds · Active home · No other pets · Trainer on retainer</p>
+        </div>
+        <div class="app-score">
+          <span class="app-fit">82% fit</span>
+          <span class="app-status new">New</span>
+        </div>
+      </div>
+
+      <div class="app-row">
+        <div class="app-info">
+          <p class="app-applicant">Jamie Chen → Pickles</p>
+          <p class="app-details">Apartment · Works from home · Has cat · First-time dog owner</p>
+        </div>
+        <div class="app-score">
+          <span class="app-fit">76% fit</span>
+          <span class="app-status new">New</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="transition">
+  <p>And none of it matters if the right adopters never see your pets in the first place.</p>
+</div>
+
+<!-- ===================== SECTION 3: MARKETING ===================== -->
+<section>
+  <div class="container">
+    <span class="section-num">03 · Marketing</span>
+    <h2 class="section-title">Marketing that runs <em>without you.</em></h2>
+    <p class="section-body">The director who used to spend Sunday night writing Instagram captions for the week's new arrivals gets Sunday night back. Homeward generates pet-specific social captions, printable adoption flyers, and shareable cards on demand, customized to each animal's story.</p>
+
+    <div class="mockup-frame">
+      <div class="mockup-header">
+        <span class="mockup-header-title">Generated for Hank</span>
+        <span class="mockup-header-meta">AI-generated · ready to post</span>
+      </div>
+      <div class="marketing-grid">
+        <div class="marketing-pet"><img id="img-hank-mkt" src="" alt="Hank" style="background:var(--bg-coral);width:280px;height:280px;object-fit:cover;border-radius:var(--radius);display:block;"></div>
+        <div>
+          <p class="marketing-caption">Don't let the muscles fool you. Hank is a leaning, lap-sitting goofball who has been waiting 67 days for the right family. House-trained, calm with strangers, and ready to give an experienced home everything he's got. Could it be yours?</p>
+          <p class="marketing-tags">#adoptdontshop #longstayer #pitbulladvocate #brooklynrescue</p>
+          <div class="marketing-actions">
+            <span class="marketing-btn">Regenerate ↻</span>
+            <span class="marketing-btn">Copy caption</span>
+            <span class="marketing-btn">Schedule post</span>
+            <span class="marketing-btn">Make print flyer ↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta">
+  <div class="container">
+    <span class="section-num">04 · Getting started</span>
+    <h2 class="cta-title">A small pilot cohort, opening <em>now.</em></h2>
+    <p class="cta-body">Homeward is taking on five shelters for our first pilot cohort. Four weeks. Free. We handle setup. Your shelter's pets and applications live on the platform during the pilot, and you see real results before deciding whether to continue.</p>
+    <a href="mailto:fc.lucask@gmail.com?subject=Homeward pilot interest" class="cta-button">
+      See this with your shelter's actual pets →
+    </a>
+    <p class="cta-note">Reply to the email and we'll set up a personalized demo for you in 48 hours.</p>
+
+    <div class="cta-benefits">
+      <div class="cta-benefit">
+        <span class="cta-benefit-num">01</span>
+        <strong>Free during pilot, and after.</strong>
+        First-cohort shelters get free access during the pilot, and a guaranteed free tier when Homeward opens to the public.
+      </div>
+      <div class="cta-benefit">
+        <span class="cta-benefit-num">02</span>
+        <strong>Direct line to shape what we build.</strong>
+        Your operational pain points become our roadmap. The features built in the pilot are built for you, not in spite of you.
+      </div>
+      <div class="cta-benefit">
+        <span class="cta-benefit-num">03</span>
+        <strong>Priority placement at launch.</strong>
+        When Homeward opens to adopters publicly, your pets are the ones being shown first.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-brand">Homeward</span>
+    <span>Built for shelters that save lives, and the families that finish their stories.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const dogs = [
+    { id: 'img-marlow',  breed: 'labrador',         name: 'Marlow' },
+    { id: 'img-pickles', breed: 'pug',              name: 'Pickles' },
+    { id: 'img-hank',    breed: 'pitbull',          name: 'Hank' },
+    { id: 'img-biscuit', breed: 'retriever/golden', name: 'Biscuit' },
+    { id: 'img-olive',   breed: 'collie/border',    name: 'Olive' },
+    { id: 'img-mochi',   breed: 'shiba',            name: 'Mochi' }
+  ];
+
+  function showFallback(el, name) {
+    if (!el) return;
+    var parent = el.parentNode;
+    var div = document.createElement('div');
+    div.textContent = name;
+    div.style.cssText = 'width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:var(--bg-coral);color:var(--accent-deep);font-family:var(--font-display);font-style:italic;font-size:22px;';
+    if (el.id === 'img-hank-mkt') {
+      div.style.width = '280px';
+      div.style.height = '280px';
+      div.style.borderRadius = 'var(--radius)';
+    }
+    parent.replaceChild(div, el);
+  }
+
+  function loadImage(dog, attempt) {
+    attempt = attempt || 1;
+    fetch('https://dog.ceo/api/breed/' + dog.breed + '/images/random')
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if (data.status !== 'success' || !data.message) {
+          throw new Error('bad response');
+        }
+        var el = document.getElementById(dog.id);
+        if (!el) return;
+        el.onerror = function() {
+          if (attempt < 2) {
+            loadImage(dog, attempt + 1);
+          } else {
+            showFallback(el, dog.name);
+            var mkt = document.getElementById('img-hank-mkt');
+            if (dog.id === 'img-hank' && mkt) showFallback(mkt, dog.name);
+          }
+        };
+        el.src = data.message;
+        if (dog.id === 'img-hank') {
+          var mkt = document.getElementById('img-hank-mkt');
+          if (mkt) {
+            mkt.onerror = function() { showFallback(mkt, dog.name); };
+            mkt.src = data.message;
+          }
+        }
+      })
+      .catch(function(){
+        if (attempt < 2) {
+          loadImage(dog, attempt + 1);
+        } else {
+          showFallback(document.getElementById(dog.id), dog.name);
+          if (dog.id === 'img-hank') {
+            showFallback(document.getElementById('img-hank-mkt'), dog.name);
+          }
+        }
+      });
+  }
+
+  dogs.forEach(function(dog) { loadImage(dog); });
+})();
+</script>
+
+</body>
+</html>
