@@ -3,59 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Homeward — find your match, bring them home. A modern pet adoption platform connecting shelters with loving families.">
-  <meta property="og:title" content="Homeward — Where pets find people">
+  <meta name="description" content="Homeward: find your match, bring them home. A modern pet adoption platform connecting shelters with loving families.">
+  <meta property="og:title" content="Homeward: Where pets find people">
   <meta property="og:description" content="Find your match. Bring them home. A modern pet adoption platform.">
   <meta property="og:type" content="website">
-  <title>Homeward — Where pets find people</title>
+  <title>Homeward: Where pets find people</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='6' cy='10' r='2' fill='%23C24914'/%3E%3Ccircle cx='12' cy='6' r='2.2' fill='%23C24914'/%3E%3Ccircle cx='18' cy='10' r='2' fill='%23C24914'/%3E%3Cellipse cx='12' cy='16' rx='5' ry='4' fill='%23C24914'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/assets/styles.css">
+
   <style>
-    :root {
-      --bg: #FAF7F0;
-      --bg-card: #FFFFFF;
-      --bg-soft: #F1EBDD;
-      --bg-coral: #FAEDE3;
-      --ink: #1F1A15;
-      --ink-soft: #6B6259;
-      --ink-muted: #998D80;
-      --accent: #C24914;
-      --accent-dark: #8C310A;
-      --accent-deep: #4A1B0C;
-      --border: rgba(31,26,21,0.10);
-      --border-strong: rgba(31,26,21,0.20);
-      --success: #2F6E44;
-      --success-bg: #E6F0E9;
-      --warning: #B47A1A;
-      --warning-bg: #FAF1DD;
-      --info: #1F4F8B;
-      --info-bg: #E5EDF7;
-      --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-      --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
-      --radius: 8px;
-      --radius-lg: 14px;
-      --radius-xl: 22px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -0.015em; }
-    p { margin: 0; }
-    a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; }
 
     .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
@@ -160,7 +121,7 @@
     .pet-tags { display: flex; flex-wrap: wrap; gap: 5px; }
     .tag { font-size: 11px; padding: 3px 9px; border-radius: 999px; background: var(--bg-coral); color: var(--accent-deep); }
 
-    /* Shelter context — the markers that make it feel real */
+    /* Shelter context: the markers that make it feel real */
     .pet-days { position: absolute; top: 12px; left: 12px; background: rgba(31,26,21,0.78); color: white; font-size: 11px; padding: 4px 9px; border-radius: 999px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); font-weight: 500; letter-spacing: 0.01em; }
     .pet-days.urgent { background: var(--accent); }
     .pet-credit { font-size: 10px; color: var(--ink-muted); margin-top: 8px; font-style: italic; font-family: var(--font-display); letter-spacing: 0.01em; }
@@ -318,7 +279,7 @@
     <div>
       <p class="eyebrow">Find your match. Bring them home.</p>
       <h1>Fifteen pets near you,<br>all looking for <em>someone like you.</em></h1>
-      <p class="hero-sub">Take our 60-second match quiz, and we'll rank pets near you by how well they actually fit your life — not just who's newest.</p>
+      <p class="hero-sub">Take our 60-second match quiz, and we'll rank pets near you by how well they actually fit your life, not just who's newest.</p>
       <div class="hero-actions">
         <button class="btn btn-primary" id="quiz-btn">Take the match quiz</button>
         <a href="#browse" class="btn btn-ghost">Browse all pets →</a>
@@ -343,12 +304,12 @@
       <div class="step">
         <span class="step-num">01</span>
         <h3>Tell us about you</h3>
-        <p>Sixty seconds: your home, your schedule, your lifestyle. We don't sell your data — we just use it to find pets that'll thrive with you.</p>
+        <p>Sixty seconds: your home, your schedule, your lifestyle. We don't sell your data. We just use it to find pets that'll thrive with you.</p>
       </div>
       <div class="step">
         <span class="step-num">02</span>
         <h3>Meet your matches</h3>
-        <p>Real shelter pets near you, ranked by fit. Senior animals, bully breeds, and rabbits get equal billing — never buried at the bottom.</p>
+        <p>Real shelter pets near you, ranked by fit. Senior animals, bully breeds, and rabbits get equal billing, never buried at the bottom.</p>
       </div>
       <div class="step">
         <span class="step-num">03</span>
@@ -398,8 +359,8 @@
     <div>
       <p class="section-eyebrow">A success story</p>
       <p class="story-quote">He'd been at the shelter sixty days. He left in sixty seconds.</p>
-      <p class="story-body">When the Marquez family took the match quiz, Hank wasn't on their radar — they were thinking small dog, not pit bull. But the quiz suggested he'd fit their active household. They came in to meet him "just to see." They didn't make it back to their car alone.</p>
-      <p class="story-attr">— The Marquez family · Brooklyn</p>
+      <p class="story-body">When the Marquez family took the match quiz, Hank wasn't on their radar. They were thinking small dog, not pit bull. But the quiz suggested he'd fit their active household. They came in to meet him "just to see." They didn't make it back to their car alone.</p>
+      <p class="story-attr">The Marquez family · Brooklyn</p>
     </div>
     <div class="story-img-wrap">
       <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=800&h=1000&fit=crop" alt="Hank with his new family">
@@ -413,12 +374,12 @@
     <div>
       <p class="section-eyebrow">For shelters</p>
       <h2 class="section-title">Tools that get your pets <em>noticed.</em></h2>
-      <p class="section-sub">You're saving lives — your software shouldn't be from 2009. Homeward's shelter dashboard handles the paperwork and the marketing, so you can focus on the animals.</p>
+      <p class="section-sub">You're saving lives. Your software shouldn't be from 2009. Homeward's shelter dashboard handles the paperwork and the marketing, so you can focus on the animals.</p>
       <ul class="benefits">
-        <li><span class="benefit-num">i.</span><span>AI-generated social posts and printable adoption flyers — pet-specific, ready to share</span></li>
+        <li><span class="benefit-num">i.</span><span>AI-generated social posts and printable adoption flyers: pet-specific, ready to share</span></li>
         <li><span class="benefit-num">ii.</span><span>Application queue with adopter pre-screening based on your shelter's criteria</span></li>
         <li><span class="benefit-num">iii.</span><span>Embeddable widget so your pets show up on your existing website automatically</span></li>
-        <li><span class="benefit-num">iv.</span><span>Analytics that tell you which pets need more visibility — and which ones to spotlight</span></li>
+        <li><span class="benefit-num">iv.</span><span>Analytics that tell you which pets need more visibility, and which ones to spotlight</span></li>
       </ul>
       <button class="btn btn-primary" id="dashboard-btn">View shelter dashboard →</button>
     </div>
@@ -521,7 +482,7 @@
       <div class="panel-card">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 12px; flex-wrap: wrap;">
           <div>
-            <h3 style="margin: 0;">Marketing — auto-generated</h3>
+            <h3 style="margin: 0;">Marketing: auto-generated</h3>
             <p style="font-size: 13px; color: var(--ink-soft); margin: 4px 0 0;">Pick a pet, get a ready-to-post caption.</p>
           </div>
           <select class="input" id="mkt-pet" style="width: auto;">
@@ -555,7 +516,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Homeward</div>
-        <p class="footer-tag">Where pets find people. A modern adoption platform built for shelters that save lives — and the families that finish their stories.</p>
+        <p class="footer-tag">Where pets find people. A modern adoption platform built for shelters that save lives, and the families that finish their stories.</p>
       </div>
       <div>
         <h4>Adopt</h4>
@@ -588,39 +549,26 @@
 
 <script>
 (function(){
-  const pets = [
-    {id:1,name:"Marlow",species:"dog",breed:"Lab mix",age:"3 yrs",size:"Large",img:"https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=600&fit=crop",traits:["Good with kids","House-trained","Loves walks"],story:"Marlow came to us when his family moved overseas. He's house-trained, knows sit and stay, and would love a yard he can patrol.",days:18,intake:"Apr 11, 2026",photo:"Volunteer photographer Dana K.",kennel:"D-04"},
-    {id:2,name:"Pickles",species:"dog",breed:"Pug mix",age:"2 yrs",size:"Small",img:"https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&h=600&fit=crop",traits:["Apartment-friendly","Quiet","Cuddler"],story:"Pickles is a perfect city companion. Quiet enough for apartment living, his idea of a perfect day is a short walk and a long nap on your lap.",days:9,intake:"Apr 20, 2026",photo:"Foster mom Rachel",kennel:"D-07"},
-    {id:3,name:"Rooster",species:"dog",breed:"Border collie",age:"5 yrs",size:"Medium",img:"https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&h=600&fit=crop",traits:["Loves other dogs","Active","Trained"],story:"Rooster needs a partner in adventure. He knows over 15 commands and would thrive with someone who loves the outdoors as much as he does.",days:31,intake:"Mar 29, 2026",photo:"Volunteer photographer Dana K.",kennel:"D-12"},
-    {id:4,name:"Biscuit",species:"dog",breed:"Golden retriever pup",age:"1 yr",size:"Small",img:"https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=600&fit=crop",traits:["Good with kids","Apartment-friendly","Playful"],story:"Pure sunshine in puppy form. Biscuit is still learning the ropes but he's eager to please and has made friends with every dog at the shelter.",days:5,intake:"Apr 24, 2026",photo:"Intake team",kennel:"D-02"},
-    {id:5,name:"Olive",species:"dog",breed:"Senior shepherd mix",age:"9 yrs",size:"Medium",img:"https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop",traits:["Calm","House-trained","Quiet"],story:"Olive is looking for a quiet retirement home. She's calm, dignified, and asks only for a soft bed and gentle company.",days:42,intake:"Mar 18, 2026",photo:"Volunteer photographer Dana K.",kennel:"D-09",urgent:"Foster needed — kennel stress affecting older joints"},
-    {id:6,name:"Hank",species:"dog",breed:"Pit bull mix",age:"4 yrs",size:"Large",img:"https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=600&h=600&fit=crop",traits:["Loves walks","House-trained","Calm"],story:"Don't let the muscles fool you — Hank is a leaning, lap-sitting goofball. He needs an experienced family who'll love him for who he is.",days:67,intake:"Feb 21, 2026",photo:"Volunteer photographer Dana K.",kennel:"D-15",urgent:"Long-stay: 60+ days waiting for the right family"},
-    {id:7,name:"Mochi",species:"dog",breed:"Shiba Inu",age:"3 yrs",size:"Medium",img:"https://images.unsplash.com/photo-1568572933382-74d440642117?w=600&h=600&fit=crop",traits:["Active","Trained","Quiet"],story:"Independent, clean, and clever. Mochi is the cat of the dog world — he'll love you on his terms and earn yours every day.",days:14,intake:"Apr 15, 2026",photo:"Foster dad Marcus",kennel:"D-06"},
-    {id:8,name:"Mango",species:"cat",breed:"Orange tabby",age:"2 yrs",size:"Small",img:"https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=600&h=600&fit=crop",traits:["Good with cats","Apartment-friendly","Cuddly"],story:"Mango is a love bug. She purrs the moment you look at her and gets along with other cats. Perfect for a first-time cat parent.",days:11,intake:"Apr 18, 2026",photo:"Cat room volunteer",kennel:"C-03"},
-    {id:9,name:"Sage",species:"cat",breed:"Russian blue",age:"4 yrs",size:"Small",img:"https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600&h=600&fit=crop",traits:["Quiet","Apartment-friendly","Independent"],story:"Sage is independent but affectionate on her own terms. She'd do best in a calm home with her own space.",days:23,intake:"Apr 06, 2026",photo:"Cat room volunteer",kennel:"C-08"},
-    {id:10,name:"Pepper",species:"cat",breed:"Tabby",age:"1 yr",size:"Small",img:"https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&h=600&fit=crop",traits:["Playful","Good with kids","Apartment-friendly"],story:"Pepper is bursting with kitten energy. She'll chase a feather toy for hours and loves a household with kids who'll play with her.",days:7,intake:"Apr 22, 2026",photo:"Cat room volunteer",kennel:"C-01"},
-    {id:11,name:"Pixel",species:"cat",breed:"Senior calico",age:"11 yrs",size:"Small",img:"https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&h=600&fit=crop",traits:["Calm","Apartment-friendly","Independent"],story:"Pixel has seen things. She wants a quiet sunny window, a steady hand for chin scratches, and to spend her golden years feeling cherished.",days:38,intake:"Mar 22, 2026",photo:"Cat room volunteer",kennel:"C-11",urgent:"Senior — Silver Whiskers program eligible"},
-    {id:12,name:"Clover",species:"other",breed:"Holland lop rabbit",age:"1 yr",size:"Small",img:"https://images.unsplash.com/photo-1535241749838-299277b6305f?w=600&h=600&fit=crop",traits:["Quiet","Apartment-friendly","Gentle"],story:"Clover is litter-trained, loves leafy greens, and binkies when she's happy. She's looking for a patient family ready to learn rabbit-language.",days:21,intake:"Apr 08, 2026",photo:"Small animals team",kennel:"S-02"}
-  ];
+  let pets = [];
 
   const captions = {
     1:[
-      {c:"Meet Marlow — the gentle 3-year-old who'd rather patrol your backyard than run a marathon. House-trained, knows his commands, dreaming of a family with kids who'll throw the ball just one more time.",t:"#adoptdontshop #brooklynanimalrescue #adoptableNYC #labmix"},
+      {c:"Meet Marlow: the gentle 3-year-old who'd rather patrol your backyard than run a marathon. House-trained, knows his commands, dreaming of a family with kids who'll throw the ball just one more time.",t:"#adoptdontshop #brooklynanimalrescue #adoptableNYC #labmix"},
       {c:"Marlow is 65 pounds of devotion in a Lab mix package. He's calm with strangers, gentle with kids, and ready to learn the route of your morning walk by heart.",t:"#nycadoptables #familydog #brooklynrescue"},
-      {c:"Looking for a co-pilot? Marlow is house-trained, kid-tested, and yard-approved. He's been waiting 47 days for the right family — could it be yours?",t:"#longstayer #adoptdontshop #brooklynanimalrescue"}
+      {c:"Looking for a co-pilot? Marlow is house-trained, kid-tested, and yard-approved. He's been waiting 47 days for the right family. Could it be yours?",t:"#longstayer #adoptdontshop #brooklynanimalrescue"}
     ],
     3:[
       {c:"Rooster knows 15 commands and one big secret: the right human is out there. Active home preferred. Hiking partners, apply within.",t:"#bordercollie #adoptdontshop #activedog"},
       {c:"Border collie energy meets golden retriever heart. Rooster is trained, eager, and ready to be your weekend warrior.",t:"#smartdog #brooklynanimalrescue #trailbuddy"},
-      {c:"Smart, fast, focused. Rooster needs a job — could be agility, could be your shadow on every trail. Either way, he's all in.",t:"#workingdog #adoptableNYC"}
+      {c:"Smart, fast, focused. Rooster needs a job: could be agility, could be your shadow on every trail. Either way, he's all in.",t:"#workingdog #adoptableNYC"}
     ],
     5:[
       {c:"Olive is 9 and dignified about it. She'd like a soft bed by the window, a slow walk before dinner, and someone to grow old with quietly.",t:"#seniordogs #adoptaseniordog #brooklynrescue"},
-      {c:"Senior pets aren't broken — they're loyal from day one. Olive is house-trained, gentle, and ready to be your peace and quiet.",t:"#seniorsrock #adoptdontshop"},
+      {c:"Senior pets aren't broken. They're loyal from day one. Olive is house-trained, gentle, and ready to be your peace and quiet.",t:"#seniorsrock #adoptdontshop"},
       {c:"Olive doesn't need much: a couch, a kind voice, a steady routine. In return she'll give you the most loving years of her life.",t:"#seniorlife #brooklynanimalrescue"}
     ],
     6:[
-      {c:"Don't let the muscles fool you — Hank is a leaning, lap-sitting goofball. Experienced families, your match is here.",t:"#pitbullsofinstagram #dontbullymybreed #adoptdontshop"},
+      {c:"Don't let the muscles fool you. Hank is a leaning, lap-sitting goofball. Experienced families, your match is here.",t:"#pitbullsofinstagram #dontbullymybreed #adoptdontshop"},
       {c:"Hank has been overlooked for 60 days. People walk past his kennel, but they're missing one of the gentlest dogs we've ever had.",t:"#longstayer #pitbulladvocate #brooklynrescue"},
       {c:"Pit bull mix on paper, full-time cuddler in practice. Hank needs someone who'll see past the breed and meet the dog.",t:"#dontjudgeabreed #adoptableNYC #brooklynanimalrescue"}
     ]
@@ -632,6 +580,7 @@
   const favCount = document.getElementById('fav-count');
   const favs = new Set();
   let activeFilter = 'all';
+  let loadFailed = false;
 
   function heart(filled){
     return filled
@@ -655,6 +604,7 @@
 
   function render(filter){
     activeFilter = filter;
+    if(loadFailed) return;
     const list = filterPets(filter);
     if(list.length===0 && filter==='favs'){ grid.style.display='none'; empty.style.display='block'; }
     else { grid.style.display='grid'; empty.style.display='none'; }
@@ -772,6 +722,7 @@
   function updateMkt(){
     const id = +mktSel.value;
     const p = pets.find(x => x.id === id);
+    if(!p) return;
     mktImg.src = p.img;
     const opts = captions[id] || captions[1];
     const choice = opts[mktIdx % opts.length];
@@ -780,7 +731,6 @@
   }
   mktSel.onchange = () => { mktIdx = 0; updateMkt(); };
   document.getElementById('mkt-regen').onclick = () => { mktIdx++; updateMkt(); };
-  updateMkt();
 
   // ============ QUIZ ============
   const quiz = document.getElementById('quiz');
@@ -793,7 +743,14 @@
   let answers = []; let qIdx = 0;
 
   function renderQuiz(){
-    if(qIdx < questions.length){
+    if(loadFailed){
+      quiz.innerHTML = `
+        <p class="quiz-q">We couldn't load the pets right now.</p>
+        <p style="color: var(--ink-soft); font-size: 14px; margin-bottom: 16px;">Please refresh the page to try again.</p>
+        <button class="btn btn-ghost btn-sm" id="quiz-done">Close</button>
+      `;
+      document.getElementById('quiz-done').onclick = closeQuiz;
+    } else if(qIdx < questions.length){
       const q = questions[qIdx];
       quiz.innerHTML = `
         <p class="quiz-progress">Question ${qIdx+1} of ${questions.length}</p>
@@ -851,7 +808,21 @@
     quiz.scrollIntoView({behavior: 'smooth', block: 'start'});
   };
 
-  render('all');
+  // ============ LOAD PETS ============
+  fetch('/data/pets.json')
+    .then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(data => {
+      pets = data;
+      render('all');
+      updateMkt();
+    })
+    .catch(err => {
+      console.error('Could not load pets:', err);
+      loadFailed = true;
+      grid.style.display = 'none';
+      empty.textContent = "We couldn't load the pets right now. Please refresh the page to try again.";
+      empty.style.display = 'block';
+    });
 })();
 </script>
 

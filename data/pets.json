@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "name": "Marlow",
+    "species": "dog",
+    "breed": "Lab mix",
+    "age": "3 yrs",
+    "size": "Large",
+    "img": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=600&fit=crop",
+    "traits": [
+      "Good with kids",
+      "House-trained",
+      "Loves walks"
+    ],
+    "story": "Marlow came to us when his family moved overseas. He's house-trained, knows sit and stay, and would love a yard he can patrol.",
+    "days": 18,
+    "intake": "Apr 11, 2026",
+    "photo": "Volunteer photographer Dana K.",
+    "kennel": "D-04"
+  },
+  {
+    "id": 2,
+    "name": "Pickles",
+    "species": "dog",
+    "breed": "Pug mix",
+    "age": "2 yrs",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&h=600&fit=crop",
+    "traits": [
+      "Apartment-friendly",
+      "Quiet",
+      "Cuddler"
+    ],
+    "story": "Pickles is a perfect city companion. Quiet enough for apartment living, his idea of a perfect day is a short walk and a long nap on your lap.",
+    "days": 9,
+    "intake": "Apr 20, 2026",
+    "photo": "Foster mom Rachel",
+    "kennel": "D-07"
+  },
+  {
+    "id": 3,
+    "name": "Rooster",
+    "species": "dog",
+    "breed": "Border collie",
+    "age": "5 yrs",
+    "size": "Medium",
+    "img": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&h=600&fit=crop",
+    "traits": [
+      "Loves other dogs",
+      "Active",
+      "Trained"
+    ],
+    "story": "Rooster needs a partner in adventure. He knows over 15 commands and would thrive with someone who loves the outdoors as much as he does.",
+    "days": 31,
+    "intake": "Mar 29, 2026",
+    "photo": "Volunteer photographer Dana K.",
+    "kennel": "D-12"
+  },
+  {
+    "id": 4,
+    "name": "Biscuit",
+    "species": "dog",
+    "breed": "Golden retriever pup",
+    "age": "1 yr",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=600&fit=crop",
+    "traits": [
+      "Good with kids",
+      "Apartment-friendly",
+      "Playful"
+    ],
+    "story": "Pure sunshine in puppy form. Biscuit is still learning the ropes but he's eager to please and has made friends with every dog at the shelter.",
+    "days": 5,
+    "intake": "Apr 24, 2026",
+    "photo": "Intake team",
+    "kennel": "D-02"
+  },
+  {
+    "id": 5,
+    "name": "Olive",
+    "species": "dog",
+    "breed": "Senior shepherd mix",
+    "age": "9 yrs",
+    "size": "Medium",
+    "img": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop",
+    "traits": [
+      "Calm",
+      "House-trained",
+      "Quiet"
+    ],
+    "story": "Olive is looking for a quiet retirement home. She's calm, dignified, and asks only for a soft bed and gentle company.",
+    "days": 42,
+    "intake": "Mar 18, 2026",
+    "photo": "Volunteer photographer Dana K.",
+    "kennel": "D-09",
+    "urgent": "Foster needed: kennel stress affecting older joints"
+  },
+  {
+    "id": 6,
+    "name": "Hank",
+    "species": "dog",
+    "breed": "Pit bull mix",
+    "age": "4 yrs",
+    "size": "Large",
+    "img": "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=600&h=600&fit=crop",
+    "traits": [
+      "Loves walks",
+      "House-trained",
+      "Calm"
+    ],
+    "story": "Don't let the muscles fool you. Hank is a leaning, lap-sitting goofball. He needs an experienced family who'll love him for who he is.",
+    "days": 67,
+    "intake": "Feb 21, 2026",
+    "photo": "Volunteer photographer Dana K.",
+    "kennel": "D-15",
+    "urgent": "Long-stay: 60+ days waiting for the right family"
+  },
+  {
+    "id": 7,
+    "name": "Mochi",
+    "species": "dog",
+    "breed": "Shiba Inu",
+    "age": "3 yrs",
+    "size": "Medium",
+    "img": "https://images.unsplash.com/photo-1568572933382-74d440642117?w=600&h=600&fit=crop",
+    "traits": [
+      "Active",
+      "Trained",
+      "Quiet"
+    ],
+    "story": "Independent, clean, and clever. Mochi is the cat of the dog world. He'll love you on his terms and earn yours every day.",
+    "days": 14,
+    "intake": "Apr 15, 2026",
+    "photo": "Foster dad Marcus",
+    "kennel": "D-06"
+  },
+  {
+    "id": 8,
+    "name": "Mango",
+    "species": "cat",
+    "breed": "Orange tabby",
+    "age": "2 yrs",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=600&h=600&fit=crop",
+    "traits": [
+      "Good with cats",
+      "Apartment-friendly",
+      "Cuddly"
+    ],
+    "story": "Mango is a love bug. She purrs the moment you look at her and gets along with other cats. Perfect for a first-time cat parent.",
+    "days": 11,
+    "intake": "Apr 18, 2026",
+    "photo": "Cat room volunteer",
+    "kennel": "C-03"
+  },
+  {
+    "id": 9,
+    "name": "Sage",
+    "species": "cat",
+    "breed": "Russian blue",
+    "age": "4 yrs",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600&h=600&fit=crop",
+    "traits": [
+      "Quiet",
+      "Apartment-friendly",
+      "Independent"
+    ],
+    "story": "Sage is independent but affectionate on her own terms. She'd do best in a calm home with her own space.",
+    "days": 23,
+    "intake": "Apr 06, 2026",
+    "photo": "Cat room volunteer",
+    "kennel": "C-08"
+  },
+  {
+    "id": 10,
+    "name": "Pepper",
+    "species": "cat",
+    "breed": "Tabby",
+    "age": "1 yr",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&h=600&fit=crop",
+    "traits": [
+      "Playful",
+      "Good with kids",
+      "Apartment-friendly"
+    ],
+    "story": "Pepper is bursting with kitten energy. She'll chase a feather toy for hours and loves a household with kids who'll play with her.",
+    "days": 7,
+    "intake": "Apr 22, 2026",
+    "photo": "Cat room volunteer",
+    "kennel": "C-01"
+  },
+  {
+    "id": 11,
+    "name": "Pixel",
+    "species": "cat",
+    "breed": "Senior calico",
+    "age": "11 yrs",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&h=600&fit=crop",
+    "traits": [
+      "Calm",
+      "Apartment-friendly",
+      "Independent"
+    ],
+    "story": "Pixel has seen things. She wants a quiet sunny window, a steady hand for chin scratches, and to spend her golden years feeling cherished.",
+    "days": 38,
+    "intake": "Mar 22, 2026",
+    "photo": "Cat room volunteer",
+    "kennel": "C-11",
+    "urgent": "Senior: Silver Whiskers program eligible"
+  },
+  {
+    "id": 12,
+    "name": "Clover",
+    "species": "other",
+    "breed": "Holland lop rabbit",
+    "age": "1 yr",
+    "size": "Small",
+    "img": "https://images.unsplash.com/photo-1535241749838-299277b6305f?w=600&h=600&fit=crop",
+    "traits": [
+      "Quiet",
+      "Apartment-friendly",
+      "Gentle"
+    ],
+    "story": "Clover is litter-trained, loves leafy greens, and binkies when she's happy. She's looking for a patient family ready to learn rabbit-language.",
+    "days": 21,
+    "intake": "Apr 08, 2026",
+    "photo": "Small animals team",
+    "kennel": "S-02"
+  }
+]
