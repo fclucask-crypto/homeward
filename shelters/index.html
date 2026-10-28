@@ -299,9 +299,33 @@
       padding: 7px 12px;
       border: 1px solid var(--border-strong);
       border-radius: var(--radius);
+      line-height: inherit;
       background: transparent;
       color: var(--ink);
-      cursor: default;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+    }
+    .marketing-btn:hover {
+      background: var(--bg-coral);
+      border-color: var(--accent-deep);
+    }
+    .marketing-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .marketing-btn.is-busy {
+      opacity: 0.6;
+      cursor: progress;
+    }
+    .marketing-caption,
+    .marketing-tags {
+      transition: opacity 0.2s;
+    }
+    .marketing-note {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 10px;
+      min-height: 1.6em;
     }
 
     /* ============ CTA SECTION ============ */
@@ -683,14 +707,15 @@
       <div class="marketing-grid">
         <div class="marketing-pet"><img id="img-hank-mkt" src="" alt="Hank" style="background:var(--bg-coral);width:280px;height:280px;object-fit:cover;border-radius:var(--radius);display:block;"></div>
         <div>
-          <p class="marketing-caption">Don't let the muscles fool you. Hank is a leaning, lap-sitting goofball who has been waiting 67 days for the right family. House-trained, calm with strangers, and ready to give an experienced home everything he's got. Could it be yours?</p>
-          <p class="marketing-tags">#adoptdontshop #longstayer #pitbulladvocate #brooklynrescue</p>
+          <p class="marketing-caption" id="mkt-caption">Don't let the muscles fool you. Hank is a leaning, lap-sitting goofball who has been waiting 67 days for the right family. House-trained, calm with strangers, and ready to give an experienced home everything he's got. Could it be yours?</p>
+          <p class="marketing-tags" id="mkt-tags">#adoptdontshop #longstayer #pitbulladvocate #brooklynrescue</p>
           <div class="marketing-actions">
-            <span class="marketing-btn">Regenerate ↻</span>
-            <span class="marketing-btn">Copy caption</span>
-            <span class="marketing-btn">Schedule post</span>
-            <span class="marketing-btn">Make print flyer ↗</span>
+            <button type="button" class="marketing-btn" data-action="regenerate">Regenerate ↻</button>
+            <button type="button" class="marketing-btn" data-action="copy">Copy caption</button>
+            <button type="button" class="marketing-btn" data-action="schedule">Schedule post</button>
+            <button type="button" class="marketing-btn" data-action="flyer">Make print flyer ↗</button>
           </div>
+          <p class="marketing-note" id="mkt-note" aria-live="polite"></p>
         </div>
       </div>
     </div>
@@ -802,6 +827,85 @@
   }
 
   dogs.forEach(function(dog) { loadImage(dog); });
+})();
+
+(function() {
+  // ============ MARKETING TOOLBAR ============
+  var caption = document.getElementById('mkt-caption');
+  var tags = document.getElementById('mkt-tags');
+  var note = document.getElementById('mkt-note');
+  if (!caption || !tags || !note) return;
+
+  var captions = [
+    { c: caption.textContent, t: tags.textContent },
+    { c: "Hank has spent 67 days watching families walk past his kennel. They're missing one of the gentlest dogs we've ever had. He's house-trained, calm, and happiest leaning against your legs. Come meet him.", t: "#adoptdontshop #pitbullsofinstagram #seniorsandlongstayers #brooklynrescue" },
+    { c: "Pit bull mix on paper, full-time cuddler in practice. Hank loves long walks, short naps, and anyone who'll scratch behind his ears. Experienced families, your new best friend is waiting.", t: "#dontbullymybreed #adoptableNYC #longstayer #brooklynanimalrescue" }
+  ];
+  var idx = 0;
+  var noteTimer = null;
+
+  function setNote(text) {
+    note.textContent = text;
+    clearTimeout(noteTimer);
+    noteTimer = setTimeout(function() { note.textContent = ''; }, 2500);
+  }
+
+  function regenerate(btn) {
+    if (btn.classList.contains('is-busy')) return;
+    var label = btn.textContent;
+    btn.classList.add('is-busy');
+    btn.textContent = 'Writing…';
+    caption.style.opacity = tags.style.opacity = '0.3';
+    setTimeout(function() {
+      idx = (idx + 1) % captions.length;
+      caption.textContent = captions[idx].c;
+      tags.textContent = captions[idx].t;
+      caption.style.opacity = tags.style.opacity = '';
+      btn.textContent = label;
+      btn.classList.remove('is-busy');
+    }, 600);
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+  }
+
+  function copy(btn) {
+    var text = caption.textContent + '\n\n' + tags.textContent;
+    var write = navigator.clipboard && window.isSecureContext
+      ? navigator.clipboard.writeText(text).catch(function() { return fallbackCopy(text); })
+      : fallbackCopy(text);
+    write.then(function() {
+      if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      clearTimeout(btn._copiedTimer);
+      btn._copiedTimer = setTimeout(function() { btn.textContent = btn.dataset.label; }, 1500);
+      setNote('Caption and hashtags copied. Paste it straight into Instagram or Facebook.');
+    }, function() {
+      setNote("Couldn't copy automatically. Select the caption and copy it by hand.");
+    });
+  }
+
+  var actions = {
+    regenerate: regenerate,
+    copy: copy,
+    schedule: function() { setNote('Scheduling to Instagram and Facebook is part of the pilot. In this preview, use Copy caption and post it yourself.'); },
+    flyer: function() { setNote('Printable flyers are part of the pilot. We will set one up for each of your animals during onboarding.'); }
+  };
+
+  document.querySelectorAll('.marketing-btn[data-action]').forEach(function(btn) {
+    btn.addEventListener('click', function() { actions[btn.dataset.action](btn); });
+  });
 })();
 </script>
 
